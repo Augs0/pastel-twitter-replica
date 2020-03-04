@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Open+Sans&display=swap");
+/* Global styling */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  Header styles */
+
+#hashtagHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #ffabab;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 3px;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+#hashtagHeader a {
+  padding: 2px;
+  color: white;
+  text-decoration: none;
+}
+
+#hashtagHeader a:visited {
+  color: white;
+}
+
+/*  Main content */
+#tweets {
+  width: 500px;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 0; /* this will help the container stay in place when responsive as it isn't trying to adjust to fit in the padding*/
+  margin-bottom: 100px; /* only necessary because of my footer*/
+}
+
+.loader {
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.tweet {
+  display: flex;
+  max-width: 100%;
+  padding: 5px;
+  border-right: 1px solid gray; /* If you set the border on the container it will be visible before your tweets appear*/
+  border-left: 1px solid gray;
+  border-top: 1px solid gray;
+  transform: translateY(-100px);
+  animation: slideIn 0.5s ease-in forwards;
+}
+
+.tweet:last-child {
+  border-bottom: 1px solid gray;
+}
+
+.tweet:nth-child(odd) {
+  background: rgba(255, 255, 209, 0.8);
+}
+
+.tweet:nth-child(even) {
+  background: rgba(255, 201, 222, 0.7);
+}
+
+.imageContainer {
+  padding: 15px 20px;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.userTweetInfo {
+  padding: 10px;
+}
+
+.userName {
+  font-weight: bold;
+}
+
+.handle {
+  color: #a9a9a9;
+}
+
+/*  Footer styles */
+footer {
+  font-family: "Montserrat Alternates", sans-serif;
+  display: flex;
+  padding: 10px 0px 0px 0px;
+  font-size: 14px;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  width: 100vw;
+}
+
+footer > h2 {
+  margin: 0;
+  padding: 0 10px;
+}
+
+#projectSrcBtn {
+  background: transparent;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+/* Keyframes */
+@keyframes slideIn {
+  to {
+    transform: translate(0px);
+  }
+}
+
+/* Media queries */
+@media (max-width: 400px) {
+  footer {
+    display: block;
+  }
+  footer > h2 {
+    font-size: 1em;
+  }
+  #projectSrcBtn {
+    position: absolute;
+    top: 5px;
+    font-size: 0.5em;
+    right: 20px;
+  }
+}
